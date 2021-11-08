@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  <title>Currency Converter</title>
+</head>
+<body>
+  <main class="container">
+    <label for="value">Value</label>
+    <input type="number" id="value" class="value-from-for">
+
+    <label for="currency-from">From</label>
+    <select name="" id="currency-from" class="value-from-for select-from">
+      <option value="#">Selecione</option>
+      <option value="USD">Dólar Americano - USD</option>
+      <option value="BRL">Real Brasileiro - BRL</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="JPY">Iene - JPY</option>
+      <option value="CAD">Dólar Canadense - CAD</option>
+      <option value="ARS">Peso Argentino - ARS</option>
+      <option value="CHF">Franco Suíço - CHF</option>
+      <option value="AUD">Dólar Australiano - AUD</option>
+    </select>
+
+    <div class="invert-coins">
+      <img src="assets/images/icons8-currency-exchange-94.png" alt="icon for invert coins" class="exchange-img">
+    </div>
+
+    <label for="currency-for">For</label>
+    <select id="currency-for" class="value-from-for select-for">
+      <option value="#">Selecione</option>
+      <option value="USD">Dólar Americano - USD</option>
+      <option value="BRL">Real Brasileiro - BRL</option>
+      <option value="EUR">Euro - EUR</option>
+      <option value="JPY">Iene - JPY</option>
+      <option value="CAD">Dólar Canadense - CAD</option>
+      <option value="ARS">Peso Argentino - ARS</option>
+      <option value="CHF">Franco Suíço - CHF</option>
+      <option value="AUD">Dólar Australiano - AUD</option>
+    </select>
+
+    <button class="btn-convert">Convert</button>
+
+    <section class="result"></section>
+  </main>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
