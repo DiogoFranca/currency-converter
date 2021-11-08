@@ -62,7 +62,7 @@ function showOnScreen(money, moneyAfterExchange, currencyAcronymFrom, currencyAc
 
   div.setAttribute('class', 'box-result');
   icon.setAttribute('class', 'close-icon');
-  icon.setAttribute('src', '../assets/images/close-icon.png');
+  icon.setAttribute('src', 'assets/images/close-icon.png');
 
   div.innerHTML = `<p>${money} ${currencyNameFrom}(${currencyAcronymFrom}) = ${moneyAfterExchange.toFixed(2)} ${currencyNameFor}(${currencyAcronymFor})</p>`;
   div.appendChild(icon);
