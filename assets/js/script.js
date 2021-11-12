@@ -1,13 +1,63 @@
 const inputValue = document.querySelector('#value');
-let selectFrom = document.querySelector('.select-from');
+const selectFrom = document.querySelector('.select-from');
 const exchangeImg = document.querySelector('.exchange-img');
-let selectFor = document.querySelector('.select-for');
+const selectFor = document.querySelector('.select-for');
 const btnConvert = document.querySelector('.btn-convert');
 const container = document.querySelector('.container');
+const result = document.querySelector('#result');
+const selectOne = document.querySelector('.value-from-for.select-from.select-from-for');
+const selectTwo = document.querySelector('.value-from-for.select-for.select-from-for')
+const selectOption = document.querySelector('.select-option');
 
-exchangeImg.addEventListener('click', () => {
-  exchangeCoins(selectFrom, selectFor);
+const dataCurrency = [
+  {
+    symbol: 'USD',
+    currencyName: 'Dólar Americano - USD'
+  },
+  {
+    symbol: 'BRL',
+    currencyName: 'Real Brasileiro - BRL'
+  },
+  {
+    symbol: 'EUR',
+    currencyName: 'Euro - EUR'
+  },
+  {
+    symbol: 'JPY',
+    currencyName: 'Iene - JPY'
+  },
+  {
+    symbol: 'CAD',
+    currencyName: 'Dólar Canadense - CAD'
+  },
+  {
+    symbol: 'ARS',
+    currencyName: 'Peso Argentino - ARS'
+  },
+  {
+    symbol: 'CHF',
+    currencyName: 'Franco Suíço - CHF'
+  },
+  {
+    symbol: 'AUD',
+    currencyName: 'Dólar Australiano - AUD'
+  }
+];
+
+dataCurrency.map(option => {
+  const cloneOption = selectOption.cloneNode(true);
+  const cloneOptionTwo = selectOption.cloneNode(true);
+
+  cloneOption.value = option.symbol;
+  cloneOption.innerText = option.currencyName;
+
+  cloneOptionTwo.value = option.symbol;
+  cloneOptionTwo.innerText = option.currencyName;
+  
+  selectOne.appendChild(cloneOption);
+  selectTwo.appendChild(cloneOptionTwo);
 });
+
 
 btnConvert.addEventListener('click', () => {
   const url = `https://economia.awesomeapi.com.br/last/${selectFrom.value}-${selectFor.value}`;
@@ -23,11 +73,14 @@ btnConvert.addEventListener('click', () => {
     };
 
     for(obj in objJson) {
-      console.log(objJson[obj])
       calculate(inputValue.value, objJson[obj].ask, objJson[obj].code, objJson[obj].codein, objJson[obj].name);
     }
 
   });
+});
+
+exchangeImg.addEventListener('click', () => {
+  exchangeCoins(selectFrom, selectFor);
 });
 
 function exchangeCoins(selectFrom, selectFor) {
@@ -40,14 +93,8 @@ function exchangeCoins(selectFrom, selectFor) {
 
 function calculate(money, exchangeRate, currencyAcronymFrom, currencyAcronymFor, currencyFullName) {
   const moneyAfterExchange = money * exchangeRate;
-  console.log(exchangeRate);
   
   showOnScreen(money, moneyAfterExchange, currencyAcronymFrom, currencyAcronymFor, currencyFullName);
-}
-
-function createDiv() {
-  const div = document.createElement('div');
-  return div;
 }
 
 function createImg() {
@@ -56,21 +103,20 @@ function createImg() {
 }
 
 function showOnScreen(money, moneyAfterExchange, currencyAcronymFrom, currencyAcronymFor, currencyFullName) {
-  const div = createDiv();
   const icon = createImg();
   const [currencyNameFrom, currencyNameFor] = currencyFullName.split('/');
 
-  div.setAttribute('class', 'box-result');
+  result.setAttribute('class', 'box-result');
   icon.setAttribute('class', 'close-icon');
-  icon.setAttribute('src', 'assets/images/close-icon.png');
+  icon.setAttribute('src', './assets/images/close-icon.png');
 
-  div.innerHTML = `<p>${money} ${currencyNameFrom}(${currencyAcronymFrom}) = ${moneyAfterExchange.toFixed(2)} ${currencyNameFor}(${currencyAcronymFor})</p>`;
-  div.appendChild(icon);
-  container.appendChild(div);
-  removeBoxResult();
+  result.innerHTML = `<p>${money} ${currencyNameFrom}(${currencyAcronymFrom}) = ${moneyAfterExchange.toFixed(2)} ${currencyNameFor}(${currencyAcronymFor})</p>`;
+  result.appendChild(icon);
+  container.appendChild(result);
+  removeResult();
 }
 
-function removeBoxResult() {
+function removeResult() {
   const closeIcon = container.querySelector('.close-icon');
 
   closeIcon.addEventListener('click', e => {
