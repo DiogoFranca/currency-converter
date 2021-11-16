@@ -1,30 +1,30 @@
 <h1 align="center" style="border-bottom: none">Simple currency converter</h1>
 
-<h2 style="margin-top: 2rem" id="links">Links de navegação</h2>
+<h2 style="margin-top: 2rem" id="links">Navigation links</h2>
 
 <p align="center" style="margin-top: 2rem">
-  <a href="#descrição">Descrição</a> |
+  <a href="#description">Description</a> |
   <a href="#mobile">Mobile</a> |
   <a href="#desktop">Desktop</a> |
-  <a href="#tecnologias">Tecnologias</a> |
-  <a href="#testeaqui">Teste aqui</a> |
-  <a href="#autor">Autor</a> 
+  <a href="#technologies">Technologies</a> |
+  <a href="#testhere">Test Here</a> |
+  <a href="#author">Author</a> 
   
 </p>
 
 <br>
 
-<h2 id="descrição" >Descrição</h2>
+<h2 id="description" >Description</h2>
 
-<p style="margin-top: 2rem">Mini projeto de conversor de moedas simples, para práticar as linguagens Html, Css e JavaScript. Contêm seguintes moedas atualmente: Dólar Americano, Real Brasileiro, Euro, Iene, Dólar Canadense, Peso Argentino etc... Pra conseguir o valor atual da contação das moedas, consumi uma api gratuita, segue o link aonde encontrei essa api: <a href="https://docs.awesomeapi.com.br/api-de-moedas">Api de moedas</a>. Além do mais, o conversor já é responsivo na maioria dos dispositivos. É bom salietar que esse mini conversor está em construção, vou tentar aprimorar ele em decorrer do meu apredizado, sempre tentando implementar novas melhorias.</p>
+<p style="margin-top: 2rem">Simple currency converter mini project, to practice the Html, Css and JavaScript languagens. Contêm seguintes moedas atualmente contains following coins currently: US Dollar, Brazilian Real, Euro, Yen, Canadian Dollar, Argentine Peso, etc... To get the current value of the coin count, i used a free api, follow the link where i found this api: <a href="https://docs.awesomeapi.com.br/api-de-moedas">Coins api</a>. What's more, the converter is already responsive on most devices. It's good to note that this mini converter is under construction, i'll try to improve it as i learn, always trying to implement new improvements.</p>
 
 
 <h2 id="mobile">Mobile</h2>
 <br>
 
-<h1 align="center" style="border-bottom: none">
+<p align="center" style="border-bottom: none">
   <img alt="Readme" title="Readme" src="assets/images/mobile.gif" style="border-bottom: none"/>
-</h1>
+</p>
 
 <br>
 
@@ -33,16 +33,16 @@
 <h2 id="desktop">Desktop</h2>
 <br>
 
-<h1 align="center" style="border-bottom: none">
+<p align="center" style="border-bottom: none">
   <img alt="Readme" title="Readme" src="assets/images/desktop.gif" style="border-bottom: none"/>
-</h1>
+</p>
 
 <br>
 
-<h2 id="tecnologias">Tecnologias</h2>
+<h2 id="technologies">Technologies</h2>
 <br>
 
-As seguintes tecnologias foram usadas no mini projeto:
+The following technologies were used in the mini project.
 
 - [Html](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [Css](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
@@ -50,16 +50,15 @@ As seguintes tecnologias foram usadas no mini projeto:
 
 <br>
 
-<h2 id="testeaqui">Teste Aqui</h2>
+<h2 id="testhere">Test Here</h2>
 
 <a href="https://diogofranca.github.io/currency-converter/">Github pages</a>
 
 <br>
 
-<h2 id="autor">Autor</h2>
+<h2 id="author">Author</h2>
 Made with ❤️ by Diogo França 🎉
 
-<br>
 <br>
 
 
