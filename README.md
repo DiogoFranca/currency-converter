@@ -16,7 +16,7 @@
 
 <h2 id="description" >Description</h2>
 
-<p style="margin-top: 2rem">Simple currency converter mini project, to practice the Html, Css and JavaScript languagens. Contêm seguintes moedas atualmente contains following coins currently: US Dollar, Brazilian Real, Euro, Yen, Canadian Dollar, Argentine Peso, etc... To get the current value of the coin count, i used a free api, follow the link where i found this api: <a href="https://docs.awesomeapi.com.br/api-de-moedas">Coins api</a>. What's more, the converter is already responsive on most devices. It's good to note that this mini converter is under construction, i'll try to improve it as i learn, always trying to implement new improvements.</p>
+<p style="margin-top: 2rem">Simple currency converter mini project, to practice the Html, Css and JavaScript languagens. Contains following coins currently: US Dollar, Brazilian Real, Euro, Yen, Canadian Dollar, Argentine Peso, etc... To get the current value of the coin count, i used a free api, follow the link where i found this api: <a href="https://docs.awesomeapi.com.br/api-de-moedas">Coins api</a>. What's more, the converter is already responsive on most devices. It's good to note that this mini converter is under construction, i'll try to improve it as i learn, always trying to implement new improvements.</p>
 
 
 <h2 id="mobile">Mobile</h2>
