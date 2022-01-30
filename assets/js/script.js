@@ -1,3 +1,5 @@
+import { dataCurrency } from "./dataCurrency.js";
+
 const inputValue = document.querySelector('#value');
 const selectFrom = document.querySelector('.select-from');
 const exchangeImg = document.querySelector('.exchange-img');
@@ -8,41 +10,6 @@ const result = document.querySelector('#result');
 const selectOne = document.querySelector('.value-from-for.select-from.select-from-for');
 const selectTwo = document.querySelector('.value-from-for.select-for.select-from-for')
 const selectOption = document.querySelector('.select-option');
-
-const dataCurrency = [
-  {
-    symbol: 'USD',
-    currencyName: 'Dólar Americano - USD'
-  },
-  {
-    symbol: 'BRL',
-    currencyName: 'Real Brasileiro - BRL'
-  },
-  {
-    symbol: 'EUR',
-    currencyName: 'Euro - EUR'
-  },
-  {
-    symbol: 'JPY',
-    currencyName: 'Iene - JPY'
-  },
-  {
-    symbol: 'CAD',
-    currencyName: 'Dólar Canadense - CAD'
-  },
-  {
-    symbol: 'ARS',
-    currencyName: 'Peso Argentino - ARS'
-  },
-  {
-    symbol: 'CHF',
-    currencyName: 'Franco Suíço - CHF'
-  },
-  {
-    symbol: 'AUD',
-    currencyName: 'Dólar Australiano - AUD'
-  }
-];
 
 dataCurrency.map(option => {
   const cloneOption = selectOption.cloneNode(true);
@@ -60,24 +27,26 @@ dataCurrency.map(option => {
 
 
 btnConvert.addEventListener('click', () => {
-  const url = `https://economia.awesomeapi.com.br/last/${selectFrom.value}-${selectFor.value}`;
-  let obj = [];
-
-  fetch(url)
-  .then(response => response.json())
-  .then( objJson => {
-
-    if(objJson.status === 404) {
-      alert('Conversion currently unavailable! Try another coin combination.')
-      return;
-    };
-
-    for(obj in objJson) {
-      calculate(inputValue.value, objJson[obj].ask, objJson[obj].code, objJson[obj].codein, objJson[obj].name);
-    }
-
-  });
+    getData();
 });
+
+async function getData() {
+  try {
+    const url = `https://economia.awesomeapi.com.br/last/${selectFrom.value}-${selectFor.value}`;
+    let obj = [];
+
+    let objJson = await axios(url)
+
+    if(objJson.status === 404) throw new Error('Conversion currently unavailable! Try another coin combination.')
+
+    for(obj in objJson.data) {
+      calculate(inputValue.value, objJson.data[obj].ask, objJson.data[obj].code, objJson.data[obj].codein, objJson.data[obj].name);
+    }
+  } catch(e) {
+    alert(e);
+  }
+  
+}
 
 exchangeImg.addEventListener('click', () => {
   exchangeCoins(selectFrom, selectFor);
